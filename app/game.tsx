@@ -19,7 +19,7 @@ import { Ionicons } from "@expo/vector-icons";
 import HowToPlay from "../components/HowToPlay";
 import Toaster from "../components/Toaster";
 import { CHAR, ANSWER_INITIAL } from "../lib/initialState";
-import SquareWord from "../components/SquareWord";
+import SquareWords from "../components/SquareWords";
 import { wordleAlgorithm } from "../lib/wordleAlgo";
 import Keyboard from "../components/Keyboard";
 import Statistics from "../components/Statistics";
@@ -164,7 +164,6 @@ const Game = ({ route, navigation }: Props) => {
 			);
 		}
 
-		SetMsgInfoModal(msg);
 		if (animation == "wave") {
 			SetWaveWord(true);
 			// getResultData.push(currentTries + 1);
@@ -175,6 +174,7 @@ const Game = ({ route, navigation }: Props) => {
 			// storage.set("user.statistic", JSON.stringify(getResultData));
 		}
 
+		SetMsgInfoModal(msg);
 		await sleep(2200);
 		SetMsgInfoModal("");
 		SetWaveWord(false);
@@ -221,13 +221,23 @@ const Game = ({ route, navigation }: Props) => {
 				</Pressable>
 				<Text className="font-bold text-4xl dark:text-slate-100">Wordle</Text>
 				<Pressable onPress={toggleColorScheme} className="">
-					<Ionicons
-						style={{
-							color: colorScheme == "light" ? "black" : "rgb(148 163 184);",
-						}}
-						name="moon-sharp"
-						size={28}
-					/>
+					{colorScheme == "light" ? (
+						<Ionicons
+							style={{
+								color: "black",
+							}}
+							name="moon-sharp"
+							size={28}
+						/>
+					) : (
+						<Ionicons
+							name="sunny"
+							size={28}
+							style={{
+								color: "rgb(148 163 184);",
+							}}
+						/>
+					)}
 				</Pressable>
 			</View>
 			<View
@@ -238,7 +248,7 @@ const Game = ({ route, navigation }: Props) => {
 			<View className="flex-1 justify-between">
 				<View className="items-center mt-5 mb-3">
 					{answer.map((data, idx) => (
-						<SquareWord
+						<SquareWords
 							key={data.id}
 							answer={data}
 							currentTries={currentTries == idx}

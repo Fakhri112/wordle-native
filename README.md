@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+# **Wordle Native**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Wordle Native is a wordle game built with React Native (Expo). This project serves as a learning experience for building React Native apps, leveraging existing skills from React development.
 
-## Get started
+## **Table of Contents**
 
-1. Install dependencies
+- [About the Project](#about-the-project)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## **About the Project**
+
+Wordle Native is a fun and simple mobile game where players try to guess a hidden word in a limited number of attempts. This project was built using React Native, providing a great introduction to developing mobile apps using Expo.
+
+## **Installation**
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/username/wordle-native.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd wordle-native
+   ```
+
+3. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+4. Run the project on an Android device or emulator:
 
    ```bash
-    npx expo start
+   npx expo run:android
    ```
 
-In the output, you'll find options to open the app in a
+## **Usage**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+After installation, the game can be played on your device by following the Expo instructions on how to build and run the app. You cannot use Expo Go to preview the app because React MMKV needed to be run on native device.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## **Technologies Used**
 
-## Get a fresh project
+- **Expo**: For development and building the React Native app.
+- **React Native Reanimated**: For smooth animations and transitions.
+- **React Navigation**: For easy and intuitive navigation between screens.
+- **React MMKV**: For high-performance storage and state management.
+- **Nativewind**: For using Tailwind CSS-style utility classes in React Native.
 
-When you're ready, run:
+## **Contributing**
 
-```bash
-npm run reset-project
-```
+Contributions are welcome! If you'd like to contribute:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
 
-## Learn more
+## **Contact**
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Created by [Fakhri112](https://github.com/Fakhri112). Feel free to reach out if you have any questions or suggestions!

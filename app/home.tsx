@@ -6,24 +6,25 @@ import Statistics from "@/components/Statistics";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "./index";
 import { useIsFocused } from "@react-navigation/native";
-import { Link } from "expo-router";
 import { useColorScheme } from "nativewind";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 const Home = ({ route, navigation }: Props) => {
-	const { setColorScheme } = useColorScheme();
+	const { colorScheme, setColorScheme } = useColorScheme();
 	const [openHowToPlay, SetOpenHowToPlay] = useState(false);
 	const [openStatistic, SetOpenStatistic] = useState(false);
 	const isFocused = useIsFocused();
 
 	useEffect(() => {
+		if (!storage.getString("user.statistic")) {
+			storage.set("color.scheme", colorScheme);
+			storage.set("user.statistic", "[]");
+		}
 		let getSavedColorScheme = storage.getString("color.scheme") as
 			| "dark"
 			| "light";
 		setColorScheme(getSavedColorScheme);
-		if (!storage.getString("user.statistic"))
-			storage.set("user.statistic", "[]");
 	}, [isFocused]);
 
 	return (
