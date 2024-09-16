@@ -166,12 +166,12 @@ const Game = ({ route, navigation }: Props) => {
 
 		if (animation == "wave") {
 			SetWaveWord(true);
-			// getResultData.push(currentTries + 1);
-			// storage.set("user.statistic", JSON.stringify(getResultData));
+			getResultData.push(currentTries + 1);
+			storage.set("user.statistic", JSON.stringify(getResultData));
 		}
 		if (animation == "none") {
-			// getResultData.push(false);
-			// storage.set("user.statistic", JSON.stringify(getResultData));
+			getResultData.push(false);
+			storage.set("user.statistic", JSON.stringify(getResultData));
 		}
 
 		SetMsgInfoModal(msg);
@@ -183,8 +183,6 @@ const Game = ({ route, navigation }: Props) => {
 			SetOpenStatistic(true);
 		}
 	};
-
-	console.log(selectedWord);
 
 	return (
 		<View className="flex-1 dark:bg-neutral-900">
